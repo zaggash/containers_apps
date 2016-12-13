@@ -1,0 +1,17 @@
+## Folder to save all config files/folders
+GLOBAL_CONF_DIR='/opt/data/conf_files'
+
+## Define config volumes variables
+SSH_DIR="$GLOBAL_CONF_DIR/ssh:/root/.ssh"
+SSH_AGENT="$SSH_AUTH_SOCK:/ssh-agent"
+CHEF_CONF="$GLOBAL_CONF_DIR/chef:/root/.chef"
+GIT_CONF="$GLOBAL_CONF_DIR/gitconfig:/root/.gitconfig"
+OPENSTACK_CONF="$GLOBAL_CONF_DIR/openstack:/etc/openstack"
+AWS_DIR="$GLOBAL_CONF_DIR/aws:/root/.aws"
+
+## Others volumes
+REPO_DIR="/opt/data/repo:/opt/data/repo"
+CURRENT="$(pwd):$(pwd)"
+
+## Shared Volumes definition
+VOLUMES="-v $SSH_DIR -v $SSH_AGENT -v $GIT_CONF -v $CHEF_CONF -v $OPENSTACK_CONF -v $AWS_DIR -v $REPO_DIR -v $CURRENT"

@@ -1,0 +1,3 @@
+#!/bin/bash
+source env_var
+exec docker run -ti --rm $VOLUMES -w $(pwd) awscli aws "$@"
