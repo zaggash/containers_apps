@@ -1,10 +1,12 @@
 FROM gliderlabs/alpine
 MAINTAINER zaggash
 
-
 RUN \
   apk add --no-cache \
+    openssl \
+    ca-certificates \
     python \
+    openssl \
     py2-pip \
     ffmpeg && \
 
